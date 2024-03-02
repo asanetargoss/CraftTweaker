@@ -19,6 +19,13 @@ def subDirs = rootDir.listFiles(new FileFilter() {
     }
 });
 
-subDirs.each { File dir ->
-    include dir.name
-}
+//subDirs.each { File dir ->
+//    include dir.name
+//}
+
+include 'buildSrc'
+include 'ZenScript'
+include 'MineTweaker3-API'
+include 'MineTweaker3-MC1102-Main'
+include 'MineTweaker3-MC1102-Mod-JEI'
+include 'MineTweaker3-MC1102-Mod-IC2'
