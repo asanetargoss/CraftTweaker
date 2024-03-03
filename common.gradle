@@ -8,10 +8,10 @@ apply from: rootProject.file('configuration.gradle')
 
 repositories {
     mavenCentral()
-    maven {
-        name = "forge"
-        url = "http://maven.minecraftforge.net/"
-    }
+//    maven {
+//        name = "forge"
+//        url = "http://maven.minecraftforge.net/"
+//    }
 	maven {
 		name = "sonatype"
 		url = "https://oss.sonatype.org/content/repositories/snapshots/"
