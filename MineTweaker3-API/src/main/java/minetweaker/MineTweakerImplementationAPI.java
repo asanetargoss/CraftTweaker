@@ -27,7 +27,7 @@ import minetweaker.api.world.IBiome;
 import minetweaker.runtime.IScriptProvider;
 import minetweaker.util.EventList;
 import minetweaker.util.IEventHandler;
-import sun.awt.HeadlessToolkit;
+//import sun.awt.HeadlessToolkit; // TODO: Not implemented
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -706,11 +706,12 @@ public class MineTweakerImplementationAPI {
     // ##############################
 
     private static void copyToClipboard(String value) {
-        StringSelection stringSelection = new StringSelection(value);
+        System.out.println("Not implemented"); // TODO: Not implemented
+        /*StringSelection stringSelection = new StringSelection(value);
         if (!(Toolkit.getDefaultToolkit() instanceof HeadlessToolkit)) {
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
             clipboard.setContents(stringSelection, null);
-        }
+        }*/
     }
 
     // ############################
