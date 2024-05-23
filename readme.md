@@ -1,6 +1,6 @@
-# MineTweaker 3 CUSTOMIZED
+# MineTweaker 3 CUSTOMIZED HcA
 
-This is a fork of Minetweaker 3 (legacy branch) for Minecraft 1.10, also known as CraftTweaker, created mainly for the purpose of improving the Hardcore Alchemy modpack, but which may be used in other 1.10 modpacks if desired.
+This is a fork of Minetweaker 3 (legacy branch) for Minecraft 1.10, also known as CraftTweaker, created mainly with the intent of backporting a small subset of scripting features from later versions of Minetweaker/CraftTweaker.
 
 For 1.7.10, see the GTNH fork. For 1.11 and above, use Minetweaker upstream (aka CraftTweaker).
 

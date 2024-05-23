@@ -1,15 +1,16 @@
 [
   {
     "modid": "MineTweaker3",
-    "name": "MineTweaker 3",
+    "name": "MineTweaker 3 CUSTOMIZED HcA",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "description": "Customize your minecraft experience!",
-    "credits": "Created By Stan Hebben",
+    "description": "Customize your minecraft experience! Now with more alchemy!",
+    "credits": "The original MineTweaker was created By Stan Hebben",
     "logoFile": "assets/minetweaker/logo.png",
-    "url": "http://minetweaker3.powerofbytes.com",
+    "url": "https://github.com/asanetargoss/CraftTweaker/",
     "authorList": [
-      "Stan Hebben"
+      "Stan Hebben",
+      "asanetargoss"
     ],
     "parent": "",
     "screenshots": [],
