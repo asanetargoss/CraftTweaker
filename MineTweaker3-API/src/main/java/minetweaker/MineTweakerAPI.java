@@ -1,9 +1,21 @@
 package minetweaker;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import crafttweaker.api.recipes.IBrewingManager;
 import minetweaker.annotations.BracketHandler;
 import minetweaker.annotations.ModOnly;
 import minetweaker.api.client.IClient;
-import minetweaker.api.compat.*;
+import minetweaker.api.compat.DummyJEIRecipeRegistry;
+import minetweaker.api.compat.IJEIRecipeRegistry;
 import minetweaker.api.event.IEventManager;
 import minetweaker.api.formatting.IFormatter;
 import minetweaker.api.game.IGame;
@@ -25,16 +37,6 @@ import stanhebben.zenscript.symbols.SymbolJavaStaticGetter;
 import stanhebben.zenscript.symbols.SymbolJavaStaticMethod;
 import stanhebben.zenscript.type.natives.IJavaMethod;
 import stanhebben.zenscript.type.natives.JavaMethod;
-
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Provides access to the MineTweaker API.
@@ -76,7 +78,7 @@ public class MineTweakerAPI {
 
 		registerGlobalSymbol("logger", getJavaStaticGetterSymbol(MineTweakerAPI.class, "getLogger"));
 		registerGlobalSymbol("recipes", getJavaStaticFieldSymbol(MineTweakerAPI.class, "recipes"));
-//        registerGlobalSymbol("brewing", getJavaStaticFieldSymbol(MineTweakerAPI.class, "brewing"));
+        registerGlobalSymbol("brewing", getJavaStaticFieldSymbol(MineTweakerAPI.class, "brewing"));
         registerGlobalSymbol("furnace", getJavaStaticFieldSymbol(MineTweakerAPI.class, "furnace"));
 		registerGlobalSymbol("oreDict", getJavaStaticFieldSymbol(MineTweakerAPI.class, "oreDict"));
 		registerGlobalSymbol("events", getJavaStaticFieldSymbol(MineTweakerAPI.class, "events"));
@@ -119,10 +121,10 @@ public class MineTweakerAPI {
 	 */
 	public static IRecipeManager recipes = null;
 
-//    /**
-//     * Access point to the brewing manager.
-//     */
-//    public static IBrewingManager brewing = null;
+    /**
+     * Access point to the brewing manager.
+     */
+    public static IBrewingManager brewing = null;
 
 	/**
 	 * Access point to the furnace manager.

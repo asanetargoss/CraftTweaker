@@ -35,6 +35,8 @@ import java.awt.datatransfer.StringSelection;
 import java.util.*;
 import java.util.List;
 
+import crafttweaker.api.recipes.IBrewingManager;
+
 import static minetweaker.MineTweakerAPI.furnace;
 import static minetweaker.MineTweakerAPI.server;
 
@@ -553,6 +555,7 @@ public class MineTweakerImplementationAPI {
     public static void init(
             IOreDict oreDict,
             IRecipeManager recipes,
+            IBrewingManager brewing,
             IFurnaceManager furnace,
             IGame game,
             ILoadedMods mods,
@@ -560,6 +563,7 @@ public class MineTweakerImplementationAPI {
             IVanilla vanilla) {
         MineTweakerAPI.oreDict = oreDict;
         MineTweakerAPI.recipes = recipes;
+        MineTweakerAPI.brewing = brewing;
         MineTweakerAPI.furnace = furnace;
         MineTweakerAPI.game = game;
         MineTweakerAPI.loadedMods = mods;
