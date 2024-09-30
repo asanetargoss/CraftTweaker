@@ -1,18 +1,27 @@
 package minetweaker.mods.jei;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
+import crafttweaker.mods.jei.recipeWrappers.BrewingRecipeCWrapper;
 import mezz.jei.IngredientInformation;
-import mezz.jei.api.*;
-import mezz.jei.api.recipe.*;
+import mezz.jei.api.IJeiHelpers;
+import mezz.jei.api.IRecipeRegistry;
+import mezz.jei.api.recipe.IFocus;
+import mezz.jei.api.recipe.IRecipeCategory;
+import mezz.jei.api.recipe.IRecipeWrapper;
+import mezz.jei.api.recipe.VanillaRecipeCategoryUid;
 import mezz.jei.gui.ItemListOverlay;
 import mezz.jei.plugins.vanilla.furnace.FuelRecipe;
+import minetweaker.MineTweakerAPI;
 import minetweaker.MineTweakerImplementationAPI;
 import minetweaker.api.compat.IJEIRecipeRegistry;
 import minetweaker.api.item.IIngredient;
 import minetweaker.mc1102.util.MineTweakerHacks;
 import minetweaker.util.IEventHandler;
 import net.minecraft.item.ItemStack;
-
-import java.util.*;
 
 public class JEIRecipeRegistry implements IJEIRecipeRegistry {
     
@@ -126,6 +135,11 @@ public class JEIRecipeRegistry implements IJEIRecipeRegistry {
             if (shouldReloadItemList) {
                 shouldReloadItemList = false;
                 ((ItemListOverlay) JEIAddonPlugin.itemListOverlay).rebuildItemFilter();
+            }
+
+            for (IRecipeWrapper recipe : BrewingRecipeCWrapper.createBrewingRecipes())
+            {
+                MineTweakerAPI.getIjeiRecipeRegistry().addRecipe(recipe);
             }
         }
     }
